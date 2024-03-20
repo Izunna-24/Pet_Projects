@@ -13,7 +13,7 @@ public class Entry {
         this.id = id;
         this.tittle = tittle;
         this.body = body;
-//        con
+
     }
 
     public int getId() {
