@@ -4,28 +4,28 @@ import java.util.Arrays;
 
 public class ListCount {
     public static int[] countList(int[] numbers) {
-        int largest = 0;
+        int highestAppearedElement = 0;
 
-        int[] countMostOccured = new int[2];
-        int[] occuredCount = new int[numbers.length];
+        int[] expectedDisplay = new int[2];
+        int[] elementsCounter = new int[numbers.length];
 
         for (int count = 0; count < numbers.length; count++) {
-            for (int numberElement : numbers) {
-                if (numbers[count] == numberElement) {
-                    occuredCount[count] += 1;
+            for (int checker : numbers) {
+                if (numbers[count] == checker) {
+                    elementsCounter[count] += 1;
                 }
 
             }
         }
 
-        for (int index = 0; index < occuredCount.length; index++) {
-            if (occuredCount[index] > largest) {
-                largest = occuredCount[index];
-                countMostOccured[1] = numbers[index];
-                countMostOccured[0] = largest;
+        for (int index = 0; index < elementsCounter.length; index++) {
+            if (elementsCounter[index] > highestAppearedElement) {
+                highestAppearedElement = elementsCounter[index];
+                expectedDisplay[1] = numbers[index];
+                expectedDisplay[0] = highestAppearedElement;
             }
         }
-        return countMostOccured;
+        return expectedDisplay;
     }
 
 
