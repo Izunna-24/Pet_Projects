@@ -1,5 +1,7 @@
 package highestProduct;
 
+import static java.util.Arrays.sort;
+
 public class ArrayHighestProduct {
     public static int maxProductOfTwo(int[] numbers) {
         if (numbers.length == 0 || numbers[0] < 1) {
@@ -10,7 +12,6 @@ public class ArrayHighestProduct {
         }
         int product = Integer.MIN_VALUE;
         int result = 0;
-
 
         for (int index = 0; index < numbers.length; index++) {
             for (int count = 0; count < numbers.length; count++) {
@@ -25,10 +26,14 @@ public class ArrayHighestProduct {
         }
         return product;
     }
-    public static int dualArrayMaxProduct(int[] numbers){
+//    public static int dualArrayMaxProduct(int[] numbers){
+//    if(numbers.length < 2) return 0;
+//    int[] new = sort(numbers);
+//
+
 
     }
-}
+
 
 
 
