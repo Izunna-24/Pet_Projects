@@ -1,4 +1,4 @@
-package strings;
+package chapter14;
 
 import java.util.Set;
 import java.util.TreeSet;
