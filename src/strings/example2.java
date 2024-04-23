@@ -7,6 +7,6 @@ public class example2 {
         String s1 = "Hello World";
         String s2 = "world";
 
-        System.out.println(s1.regionMatches(6, s2, 0, 5));
+        System.out.println(s1.regionMatches(6, s2, 0, 5));//used to compare different regions of String
     }
 }
