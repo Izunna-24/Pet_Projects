@@ -1,20 +1,27 @@
-package jsonFileLocator;
+package serialization;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import sevenSegmentDisplay.Type;
 
 import java.time.LocalDateTime;
-
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class TransactionToString {
+
     private String name;
     private String id;
     private Type type;
     private int amount;
+    @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDateTime date;
-
-    public TransactionToString(String name, String id, Type type, int amount, LocalDateTime date){
-        this.name = name;
-        this.amount = amount;
-        this.date = date;
-        this.id = id;
-        this.type = type;
+    public String toString(){
+        return "transaction -->{name: " + name + ", id: " + id + "amount: " + amount + ", type: " + type +
+                ", transactionDate: " + date + "}";
     }
 
     public String getName() {
