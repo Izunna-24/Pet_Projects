@@ -8,19 +8,22 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import sevenSegmentDisplay.Type;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class TransactionToString {
-
+public class Transaction {
     private String name;
     private String id;
     private Type type;
     private int amount;
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime date;
+    private LocalDate date;
+
+
+
     public String toString(){
-        return "transaction -->{name: " + name + ", id: " + id + "amount: " + amount + ", type: " + type +
+        return "transaction -->{name: " + name + ", id: " + id + ", amount: " + amount + ", type: " + type +
                 ", transactionDate: " + date + "}";
     }
 
@@ -56,11 +59,14 @@ public class TransactionToString {
         this.amount = amount;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
+
+
+
 }
