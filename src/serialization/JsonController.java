@@ -10,9 +10,9 @@ import java.nio.file.Paths;
 
 public class JsonController {
 
-    public static Transaction[] deserializes(String jason) throws JsonProcessingException{
+    public static Transaction[] deserializes(String json) throws JsonProcessingException{
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(jason,Transaction[].class);
+        return mapper.readValue(json,Transaction[].class);
     }
 
     public static int calculateAmountSubTotal(String jsonFilePath) throws IOException {
@@ -27,4 +27,25 @@ public class JsonController {
     }
 
 
+    public static int countNumberOfDigit(String jsonFilePath) throws IOException {
+        Path path = Paths.get(jsonFilePath);
+        String fileContent = Files.readString(path);
+        int digit = 0;
+        String regex = ("\\d");
+        for(int count =0; count < fileContent.length(); count++) {
+            if(String.valueOf(fileContent.charAt(count)).matches(regex)){
+                digit++;
+            }
+        }
+        return digit;
+    }
+    public static int countNumberOfSentence(String fileContent) {
+        int numberOfSentence = 0;
+        for (int count = 0; count < fileContent.length(); count++) {
+            if (fileContent.charAt(count) == '.') {
+                numberOfSentence ++;
+            }
+        }
+        return numberOfSentence;
+    }
 }
