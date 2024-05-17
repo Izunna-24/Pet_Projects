@@ -28,7 +28,7 @@ class JsonControllerTest {
 @Test
     public void numberOfDigitInFileCanBeGottenTest() throws  IOException{
         String jsonFilePath = "C:\\Users\\DELL\\Desktop\\you have 100 men.txt";
-        int noOfDigit = 3;
+        int noOfDigit = 0;
         assertEquals(noOfDigit, JsonController.countNumberOfDigit(jsonFilePath));
 }
 

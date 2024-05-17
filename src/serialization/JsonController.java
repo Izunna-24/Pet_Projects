@@ -39,6 +39,9 @@ public class JsonController {
         }
         return digit;
     }
+
+
+
     public static int countNumberOfSentence(String fileContent) {
         int numberOfSentence = 0;
         for (int count = 0; count < fileContent.length(); count++) {

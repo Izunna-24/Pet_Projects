@@ -1,0 +1,19 @@
+@FunctionalInterface //annotates a class to have a one abstract method which is a typical functional interface
+public interface Flyable {
+    int fly();
+}
+
+/**Interfaces in java
+ * Consumer
+ * BiConsumed
+ * Supplier
+ * Function
+ * BiFunction
+ * Predicate
+ * BiPredicate
+ * Unary Operator
+ * Binary operator
+ * 
+ */
+
+ 1. Consumer Interface takes something and returns nothing

@@ -9,7 +9,6 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import sevenSegmentDisplay.Type;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Transaction {
     private String name;
