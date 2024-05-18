@@ -13,7 +13,7 @@ public interface Flyable {
  * BiPredicate
  * Unary Operator
  * Binary operator
- * 
+ * Double Supplier
  */
 
  1. Consumer Interface takes one parameter and returns nothing
@@ -25,3 +25,4 @@ public interface Flyable {
  7. BiPredicate takes two args and returns true or false
  8.Unary takes one thing and return one thing of that same type
  9. Binary operator takes two things of same type and return something of same type
+ 10. Double supplier is specialized to always produce double results; specifically works with primitive type double
