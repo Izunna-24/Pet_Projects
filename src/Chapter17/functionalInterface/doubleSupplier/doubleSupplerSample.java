@@ -10,6 +10,6 @@ public class doubleSupplerSample {
 
             return firstScore + secondScore;
         };
-        System.out.println("The total value as a double supplier is " + doubleSupplier.getAsDouble());
+        System.out.println("The total value as double supplier is " + doubleSupplier.getAsDouble());
     }
 }
