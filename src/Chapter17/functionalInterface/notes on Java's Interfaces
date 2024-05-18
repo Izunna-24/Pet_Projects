@@ -23,5 +23,5 @@ public interface Flyable {
  5. BiFunction collects two args, return type and returns something
  6. Predicate takes one argument and returns true or false
  7. BiPredicate takes two args and returns true or false
- 8.Unary takes one thing and return one thing of that same ype
+ 8.Unary takes one thing and return one thing of that same type
  9. Binary operator takes two things of same type and return something of same type

@@ -9,8 +9,5 @@ public class Example2 {
                 .forEach(System.out::println);
     }
 
-
-//    IntStream.rangeClosed(1, 10).filter(numbe -> number % 2 == 0)
-//            .forEach(System.out::println);
-//}
 }
+
