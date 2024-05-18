@@ -7,7 +7,7 @@ public class LongFunctionSample {
         LongFunction<String> longFunction = Long::toString;
 
         String result = longFunction.apply(1938478777834743L);
-        System.out.println(" String equivalence of the number given is " + result);
+        System.out.println(" String equivalence of the L type given is " + result);
 
     }
 }
