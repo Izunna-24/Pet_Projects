@@ -20,4 +20,5 @@ public class ObjDoubleConsumerExample {
         showAccountBalance.accept(human3, 120.94);
     }
 
+
 }
