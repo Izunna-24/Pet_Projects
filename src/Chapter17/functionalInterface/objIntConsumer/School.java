@@ -6,7 +6,10 @@ public class School {
     private int numberOfClasses;
 
 
-    public School(){
+    public School(String name, int numberOfStudents, int numberOfClasses) {
+        this.name = name;
+        this.numberOfStudents = numberOfStudents;
+        this.numberOfClasses = numberOfClasses;
     }
 
     @Override
