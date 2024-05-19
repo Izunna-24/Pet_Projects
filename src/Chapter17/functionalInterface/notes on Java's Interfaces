@@ -15,6 +15,9 @@ Interfaces in java
  * Binary operator
  * Double Supplier
  * IntPredicate
+ *LongFunction
+ *ObjDoubleConsumer
+ *ObjIntConsumer
 
 
 
@@ -30,3 +33,6 @@ Interfaces in java
  9. Binary operator takes two things of same type and return something of same type
  10. Double supplier is specialized to always produce double results; specifically works with primitive type double
  11. IntPredicate takes an int value and returns a boolean, only works with primitive type int
+ 12. LongFunction specializes in taking type long as argument and returning any type
+ 13. ObjDoubleConsumer takes two things( Object and double) and returns nothing
+ 14. ObjIntConsumer takes two args (Object and int) and returns nothing
