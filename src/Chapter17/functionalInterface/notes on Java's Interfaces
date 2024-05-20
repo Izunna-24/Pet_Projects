@@ -49,6 +49,15 @@ Interfaces in java
 
 Streams Category
 Intermediates
-1. forEach - works with boolean
-2. filter removes elements that return false based on predicate
-3. map transforms elements in the stream to something else
+1. flatMap() -
+2. filter() removes elements that return false based on predicate
+3. map() transforms elements in the stream to something else
+4. limit()
+5. sorted()
+6. distinct
+
+Java has 3 primitive streams
+LongStream, IntStream and Double
+
+Terminal
+1. reduce() - returns a boolean
