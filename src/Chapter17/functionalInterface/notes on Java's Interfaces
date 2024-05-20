@@ -47,3 +47,8 @@ Interfaces in java
  18. ToDoubleFunction takes one args(Obj) and returns a double valued result
  19. ToIntFunction takes one args(Obj) and returns int valued result
 
+Streams Category
+Intermediates
+1. forEach - works with boolean
+2. filter removes elements that return false based on predicate
+3. map transforms elements in the stream to something else
