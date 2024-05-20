@@ -21,6 +21,8 @@ Interfaces in java
  *ObjLongConsumer
  *IntUnaryOperator
  *ToDoubleBiFunction
+ *ToDoubleFunction
+ *ToIntFunction
 
 
 
@@ -42,4 +44,6 @@ Interfaces in java
  15. ObjLongConsumer takes (Obj and int) and returns nothing
  16. IntUnaryOperator takes one arg(type int) and returns same
  17. ToDoubleBiFunction takes two args(Obj, Obj) and returns a double valued result
+ 18. ToDoubleFunction takes one args(Obj) and returns a double valued result
+ 19. ToIntFunction takes one args(Obj) and returns int valued result
 
