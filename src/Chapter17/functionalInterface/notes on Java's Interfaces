@@ -18,6 +18,8 @@ Interfaces in java
  *LongFunction
  *ObjDoubleConsumer
  *ObjIntConsumer
+ *ObjLongConsumer
+ *IntUnaryOperator
 
 
 
@@ -36,3 +38,6 @@ Interfaces in java
  12. LongFunction specializes in taking type long as argument and returning any type
  13. ObjDoubleConsumer takes two things( Object and double) and returns nothing
  14. ObjIntConsumer takes two args (Object and int) and returns nothing
+ 15. ObjLongConsumer takes (Obj and int) and returns nothing
+ 16. IntUnaryOperator takes one arg(type int) and returns same
+
