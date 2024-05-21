@@ -52,7 +52,7 @@ Intermediates
 1. flatMap() - first maps a stream to another stream Object, and then flattens(fixes the entire element in one stream)the entire thing to one stream
 2. filter() removes elements that return false based on predicate
 3. map() transforms elements in the stream to something else
-4. limit() - gives range to the stream
+4. limit() - gives range(the first nth element from the list) to the stream
 5. sorted()
 6. distinct
 
