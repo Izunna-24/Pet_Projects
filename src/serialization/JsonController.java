@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -81,6 +82,18 @@ public class JsonController {
                     LocalDate date = transaction.getDate();
                     return !date.isBefore(transactStartDate) && !date.isAfter(transactEndDate);
     }).collect(Collectors.toList());
+    }
+
+    public static double getAverageAmountSpent(String jsonFilePath,String startDate, String endDate) throws IOException {
+        Path path = Paths.get(jsonFilePath);
+        String fileContent = Files.readString(path);
+        List<Transaction> transactions = List.of(deserializes(fileContent));
+        LocalDate transactStartDate = LocalDate.parse(startDate);
+        LocalDate transactEndDate = LocalDate.parse(endDate);
+        return transactions.stream()
+                .filter(transaction -> !transaction.getDate().isBefore(transactStartDate)
+                        && !transaction.getDate().isAfter(transactEndDate))
+                .collect(Collectors.toList());
     }
 }
 

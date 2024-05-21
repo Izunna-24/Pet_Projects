@@ -8,6 +8,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import sevenSegmentDisplay.Type;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Transaction {

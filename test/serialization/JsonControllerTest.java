@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import sevenSegmentDisplay.Type;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -62,6 +63,13 @@ class JsonControllerTest {
         List<Transaction> result = JsonController.getAllTransactions(startDate,endDate);
         assertEquals(4,result.size());
 
+    }
+
+    @Test
+    public void testToGetTheAverageTransactionAmountWithinAPeriod() throws  IOException{
+        String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
+        double averageAmountSpent = 5500.00;
+        assertEquals(averageAmountSpent, JsonController.getAverageAmountSpent(jsonFilePath));
     }
 
 
