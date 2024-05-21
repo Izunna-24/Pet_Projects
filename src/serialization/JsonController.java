@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class JsonController {
 
@@ -51,4 +55,17 @@ public class JsonController {
         }
         return numberOfSentence;
     }
+
+
+    public static List<Transaction> getDailyTransaction(String date) throws IOException{
+        String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
+        Path path = Paths.get(jsonFilePath);
+        String fileContent = Files.readString(path);
+        List<Transaction> transactions = List.of(deserializes(fileContent));
+        LocalDate transactDate = LocalDate.parse(date);
+        return transactions.stream()
+                .filter(transaction -> transaction.getDate().equals(transactDate))
+                .collect(Collectors.toList());
+    }
 }
+

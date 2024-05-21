@@ -1,7 +1,9 @@
 package Chapter17.functionalInterface.streams;
 
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class StreamOperation {
@@ -22,4 +24,9 @@ public class StreamOperation {
                 .map((number)-> number+ "")
                 .collect(Collectors.joining(", ","[","]"));
     }
+
+    public static void main(String[] args) {
+        System.out.println(new Random().nextInt());
+    }
+
 }
