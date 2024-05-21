@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,12 +44,23 @@ class JsonControllerTest {
 
 
     @Test
-    public void transactionsWithinADateTest() throws IOException{
+    public void getTransactionsWithinADateTest() throws IOException{
         String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
         String transactionDate = "2024-05-01";
-        List<Transaction> result = JsonController.getDailyTransaction(transactionDate);
+        List<Transaction> result = JsonController.getDailyTransactions(transactionDate);
         assertEquals(1,result.size());
 
+
+    }
+
+    @Test
+    public void getAllTransactionsWithinADateRangeTest() throws IOException{
+        String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
+        String startDate = "2024-05-01";
+        String endDate = "2024-05-04";
+
+        List<Transaction> result = JsonController.getAllTransactions(startDate,endDate);
+        assertEquals(4,result.size());
 
     }
 }

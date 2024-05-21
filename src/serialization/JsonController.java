@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -57,7 +56,7 @@ public class JsonController {
     }
 
 
-    public static List<Transaction> getDailyTransaction(String date) throws IOException{
+    public static List<Transaction> getDailyTransactions(String date) throws IOException{
         String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
         Path path = Paths.get(jsonFilePath);
         String fileContent = Files.readString(path);
@@ -66,6 +65,22 @@ public class JsonController {
         return transactions.stream()
                 .filter(transaction -> transaction.getDate().equals(transactDate))
                 .collect(Collectors.toList());
+    }
+
+    public static List<Transaction> getAllTransactions(String startDate, String endDate) throws IOException{
+        String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
+        Path path = Paths.get(jsonFilePath);
+        String fileContent = Files.readString(path);
+        List<Transaction> transactions = List.of(deserializes(fileContent));
+        LocalDate transactStartDate = LocalDate.parse(startDate);
+        LocalDate transactEndDate = LocalDate.parse(endDate);
+
+
+        return transactions.stream()
+                .filter(transaction -> {
+                    LocalDate date = transaction.getDate();
+                    return !date.isBefore(transactStartDate) && !date.isAfter(transactEndDate);
+    }).collect(Collectors.toList());
     }
 }
 
