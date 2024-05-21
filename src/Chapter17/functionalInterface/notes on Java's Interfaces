@@ -49,15 +49,20 @@ Interfaces in java
 
 Streams Category
 Intermediates
-1. flatMap() -
+1. flatMap() - first maps a stream to another stream Object, and then flattens(fixes the entire element in one stream)the entire thing to one stream
 2. filter() removes elements that return false based on predicate
 3. map() transforms elements in the stream to something else
-4. limit()
+4. limit() - gives range to the stream
 5. sorted()
 6. distinct
 
 Java has 3 primitive streams
-LongStream, IntStream and Double
+LongStream, IntStream and DoubleStream
 
 Terminal
-1. reduce() - returns a boolean
+1. reduce() - returns a boolean when the final reduce of the element is done and reduce to one value for Int
+2. forEach() -
+3. toList() -
+3. count() - returns number of element from the stream
+4. max() - returns max number in the stream
+5. summaryStatistics() -  returns the stat summary of the stream
