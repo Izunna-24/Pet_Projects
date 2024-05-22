@@ -21,7 +21,7 @@ public class Transaction {
     private LocalDate date;
 
 
-
+    @Override
     public String toString(){
         return "transaction -->{name: " + name + "," +
                 " id: " + id + ", amount: " + amount + "," +

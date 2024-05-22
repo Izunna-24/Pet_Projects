@@ -14,6 +14,7 @@ public class AccountSummary {
         this.transactionCount = transactionCount;
     }
 
+    @Override
     public String toString(){
         return "Account Summary --> { name: " + name + "," +
                 "balance: " + balance + "," +

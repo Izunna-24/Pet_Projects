@@ -67,7 +67,7 @@ class JsonControllerTest {
     }
 
     @Test
-    public void testToGetTheAverageTransactionAmountWithinAPeriod() throws  IOException{
+    public void testToGetTheAverageTransactionAmount_withinAPeriod() throws  IOException{
         String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
         double averageAmountSpent = 2750.00;
         String startDate = "2024-05-01";
@@ -75,6 +75,14 @@ class JsonControllerTest {
        assertEquals(averageAmountSpent, JsonController.getAverageAmountSpent(jsonFilePath,startDate,endDate));
     }
 
+    @Test
+    public void getAccountSummaryByAccountNumberTest() throws IOException{
+     String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
+     AccountSummary expected = new AccountSummary("John Doe",2000.0,1);
+     AccountSummary actual = JsonController.getAccountSummaryById(jsonFilePath,"1");
+     assertEquals(expected.toString(),actual.toString());
+
+    }
 
 
 }
