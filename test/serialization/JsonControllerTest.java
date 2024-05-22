@@ -48,7 +48,7 @@ class JsonControllerTest {
     public void getTransactionsWithinADateTest() throws IOException{
         String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
         String transactionDate = "2024-05-01";
-        List<Transaction> result = JsonController.getDailyTransactions(transactionDate);
+        List<Transaction> result = JsonController.getDailyTransactions(jsonFilePath, transactionDate);
         assertEquals(1,result.size());
 
 
@@ -60,7 +60,8 @@ class JsonControllerTest {
         String startDate = "2024-05-01";
         String endDate = "2024-05-04";
 
-        List<Transaction> result = JsonController.getAllTransactions(startDate,endDate);
+        List<Transaction> result = JsonController.getAllTransactions(jsonFilePath, startDate, endDate);
+        System.out.println(result);
         assertEquals(4,result.size());
 
     }
@@ -68,9 +69,12 @@ class JsonControllerTest {
     @Test
     public void testToGetTheAverageTransactionAmountWithinAPeriod() throws  IOException{
         String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
-        double averageAmountSpent = 5500.00;
-        assertEquals(averageAmountSpent, JsonController.getAverageAmountSpent(jsonFilePath));
+        double averageAmountSpent = 2750.00;
+        String startDate = "2024-05-01";
+        String endDate = "2024-05-04";
+       assertEquals(averageAmountSpent, JsonController.getAverageAmountSpent(jsonFilePath,startDate,endDate));
     }
+
 
 
 }

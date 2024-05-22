@@ -23,7 +23,9 @@ public class Transaction {
 
 
     public String toString(){
-        return "transaction -->{name: " + name + ", id: " + id + ", amount: " + amount + ", type: " + type +
+        return "transaction -->{name: " + name + "," +
+                " id: " + id + ", amount: " + amount + "," +
+                " type: " + type +
                 ", transactionDate: " + date + "}";
     }
 
