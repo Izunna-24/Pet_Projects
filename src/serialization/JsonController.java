@@ -83,17 +83,19 @@ public class JsonController {
 
     public static double getAverageAmountSpent(String jsonFilePath, String startDate, String endDate) throws IOException {
         List<Transaction> transactions = getAllTransactions(jsonFilePath, startDate, endDate);
-
-        return transactions.stream().mapToInt(Transaction::getAmount).average().orElseThrow();
+        return transactions.stream()
+                .mapToInt(Transaction::getAmount)
+                .average().orElseThrow();
     }
 
 
-    public static AccountSummary getAccountSummaryById (String jsonFilePath, String accountNumber) throws IOException {
+    public static AccountSummary getAccountSummaryByNumber(String jsonFilePath, String accountNumber) throws IOException {
             Path path = Paths.get(jsonFilePath);
             String fileContent = Files.readString(path);
             List<Transaction> transactions = List.of(deserializes(fileContent));
             List<Transaction> filteredTransactions = transactions.stream()
-                    .filter((transaction) -> transaction.getId().equals(accountNumber))
+                    .filter((transaction) -> transaction.getId()
+                    .equals(accountNumber))
                     .toList();
 
             String name = filteredTransactions.getFirst().getName();

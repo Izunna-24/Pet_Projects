@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import sevenSegmentDisplay.Type;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -79,7 +78,7 @@ class JsonControllerTest {
     public void getAccountSummaryByAccountNumberTest() throws IOException{
      String jsonFilePath = "C:\\Users\\DELL\\IdeaProjects\\PetWorks\\src\\serialization\\transactions.json";
      AccountSummary expected = new AccountSummary("John Doe",2000.0,1);
-     AccountSummary actual = JsonController.getAccountSummaryById(jsonFilePath,"1");
+     AccountSummary actual = JsonController.getAccountSummaryByNumber(jsonFilePath,"1");
      assertEquals(expected.toString(),actual.toString());
 
     }
