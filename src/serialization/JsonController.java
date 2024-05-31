@@ -72,8 +72,6 @@ public class JsonController {
         LocalDate transactStartDate = LocalDate.parse(startDate);
         LocalDate transactEndDate = LocalDate.parse(endDate);
         System.out.println(transactions);
-
-
         return transactions.stream()
                 .filter(transaction -> {
                     LocalDate date = transaction.getDate();
